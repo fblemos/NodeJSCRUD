@@ -68,12 +68,12 @@ import express from 'express';
 import routes from './routes.js';
 
 const app = express();
-// user o router
-app.use(routes);
 
 //indicar para o express ler body com json
 app.use(express.json());
 
+// user o router
+app.use(routes);
 
 
 //Torna express visivel fora do arquivo app.js
