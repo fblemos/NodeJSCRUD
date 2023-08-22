@@ -65,19 +65,16 @@ app.delete('/selecoes/:id',(req,res) =>{
 export default app*/
 
 import express from 'express';
-import SelecaoController from './app/controllers/SelecaoController.js';
+import routes from './routes.js';
 
 const app = express();
+// user o router
+app.use(routes);
 
 //indicar para o express ler body com json
 app.use(express.json());
 
-//CRUD
-app.get('/selecoes', SelecaoController.index);
-app.get('/selecoes/:id', SelecaoController.show);
-app.post('/selecoes',SelecaoController.store);
-app.put('/selecoes/:id',SelecaoController.update);
-app.delete('/selecoes/:id',SelecaoController.delete);
+
 
 //Torna express visivel fora do arquivo app.js
 export default app
